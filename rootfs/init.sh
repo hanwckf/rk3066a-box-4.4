@@ -49,8 +49,6 @@ echo "RK3066" > etc/hostname
 echo "T0:123:respawn:/sbin/getty 115200 ttyS2" >> etc/inittab
 sed -i '1 i\server ntp1.aliyun.com prefer' etc/ntp.conf
 sed -i 's/id:2:initdefault:/id:3:initdefault:/' etc/inittab
-sed -i 's/#timeout 60;/timeout 5;/' etc/dhcp/dhclient.conf
-sed -i 's/#initial-interval 2;/initial-interval 2;/' etc/dhcp/dhclient.conf
 sed -i '/^PermitRootLogin/cPermitRootLogin yes' etc/ssh/sshd_config
 sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' etc/locale.gen
 locale-gen en_US.UTF-8
