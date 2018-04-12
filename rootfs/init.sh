@@ -38,8 +38,9 @@ apt-get -y install net-tools
 apt-get -y install ifupdown
 
 cat >> etc/network/interfaces << EOF
-auto lo eth0
+auto lo
 iface lo inet loopback
+allow-hotplug eth0
 iface eth0 inet dhcp
 EOF
 
