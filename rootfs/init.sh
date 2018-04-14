@@ -48,7 +48,7 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai etc/localtime
 echo "Asia/Shanghai" > etc/timezone
 echo "RK3066" > etc/hostname
 echo "T0:123:respawn:/sbin/getty 115200 ttyS2" >> etc/inittab
-sed -i '1 i\server ntp1.aliyun.com prefer' etc/ntp.conf
+sed -i '/^NTPSERVERS=/cNTPSERVERS="ntp1.aliyun.com"' etc/default/ntpdate
 sed -i 's/id:2:initdefault:/id:3:initdefault:/' etc/inittab
 sed -i '/^PermitRootLogin/cPermitRootLogin yes' etc/ssh/sshd_config
 sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' etc/locale.gen

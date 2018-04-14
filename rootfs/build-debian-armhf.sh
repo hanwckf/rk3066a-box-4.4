@@ -5,7 +5,7 @@ command -v debootstrap >/dev/null 2>&1 || { echo >&2 "debootstrap not found"; ex
 [ ! -f /usr/bin/qemu-arm-static ] && { echo >&2 "qemu-arm-static not found"; exit 1; }
 
 sudo debootstrap --components=main,contrib,non-free \
---include=nano,openssh-server,busybox-syslogd,dialog,sysvinit-core,locales,htop,mtd-utils,iptables,ipset,ntp,usbutils,apt-utils \
+--include=nano,openssh-server,busybox-syslogd,dialog,sysvinit-core,locales,htop,mtd-utils,iptables,ipset,ntpdate,usbutils,apt-utils \
 --arch=armhf --variant=minbase --foreign --verbose jessie $rootfs http://mirrors.ustc.edu.cn/debian/
 
 if [ "$?" = "0" ]; then
