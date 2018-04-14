@@ -229,3 +229,7 @@
 &wdt {
 	status = "okay";
 };
+
+&global_timer {
+	status = "disable";
+};
