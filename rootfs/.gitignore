@@ -1,2 +1,5 @@
 debian-rootfs/
+ubuntu-rootfs/
 transfer.sh
+build-ubuntu-armhf.sh
+ubuntu_init.sh

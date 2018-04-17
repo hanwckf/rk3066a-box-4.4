@@ -11,7 +11,7 @@ sudo debootstrap --components=main,contrib,non-free \
 if [ "$?" = "0" ]; then
 	sudo sed -i -e 's/systemd systemd-sysv //g' $rootfs/debootstrap/required
 	sudo cp /usr/bin/qemu-arm-static $rootfs/usr/bin/qemu-arm-static
-	chmod +x init.sh && sudo cp -f init.sh $rootfs/ && sudo chroot $rootfs /init.sh
+	chmod +x debian_init.sh && sudo cp -f debian_init.sh $rootfs/ && sudo chroot $rootfs /debian_init.sh
 
 	sudo rm -f $rootfs/usr/bin/qemu-arm-static
 	sudo rm -f $rootfs/init.sh
